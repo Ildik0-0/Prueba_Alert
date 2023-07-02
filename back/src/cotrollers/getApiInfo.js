@@ -19,14 +19,14 @@
             const accessToken = authData.token;
       
            
-            const protectedEndpointResponse = await fetch('https://devtest.a2g.io/api/Platforms', {
+            const protectedEndpoint = await fetch('https://devtest.a2g.io/api/Platforms', {
               headers: {
                 'Authorization': `Bearer ${accessToken}`
               }
             });
-            const protectedData = await protectedEndpointResponse.json();
+            const protectedData = await protectedEndpoint.json();
       
-            console.log('Respuesta del endpoint protegido:', protectedData);
+            console.log('Respuesta del endpoint :', protectedData);
             
       
             res.status(200).json(protectedData);
@@ -39,13 +39,6 @@
           res.status(500).json({ error: 'Error en el servidor' });
         }
       };
-      
-  
-      
-    
-    
-      
-    
-        
+              
 
 module.exports = {apiInfo};

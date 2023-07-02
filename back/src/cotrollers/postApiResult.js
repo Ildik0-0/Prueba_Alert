@@ -17,7 +17,7 @@ const apiInfoResult = async (req, res) => {
         const accessToken = authData.token;
   
         
-        const protectedEndpointResponse = await fetch('https://devtest.a2g.io/api/Result', {
+        const protectedEndpoint = await fetch('https://devtest.a2g.io/api/Result', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -25,10 +25,7 @@ const apiInfoResult = async (req, res) => {
           },
           body: JSON.stringify({}) 
         });
-        const protectedData = await protectedEndpointResponse.json();
-  
-        
-        
+        const protectedData = await protectedEndpoint.json();
   
         res.status(200).json(protectedData);
       } else {

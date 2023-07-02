@@ -28,12 +28,12 @@ const getApiPlatformsId = async (req, res) => {
       const accessToken = authData.token;
 
       
-      const protectedEndpointResponse = await fetch(`https://devtest.a2g.io/api/Platforms/${id}`, {
+      const protectedEndpoint = await fetch(`https://devtest.a2g.io/api/Platforms/${id}`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }
       });
-      const protectedData = await protectedEndpointResponse.json();
+      const protectedData = await protectedEndpoint.json();
 
       
      
