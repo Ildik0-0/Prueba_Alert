@@ -33,7 +33,7 @@ const SensorDetails = () => {
             dataRange: data.cantidadDatosEnRango
           });
 
-          console.log('Respuesta del endpoint api/Result:', resultResponse.data);
+          return (resultResponse.data);
         } else {
           console.error('Error fetching sensor data:', data.error);
         }
@@ -52,16 +52,18 @@ const SensorDetails = () => {
   }
 
   return (
-    <div>
-      <h2>Sensor</h2>
-      <h2>Count of Categories:</h2>
-      <ul>
-        <li>Bajo: {categories.bajo}</li>
-        <li>Medio: {categories.medio}</li>
-        <li>Alto: {categories.alto}</li>
-      </ul>
-      <h2>Data Range:</h2>
-      <p>{dataRange} data points</p>
+    <div className='detail-sensor-dev'>
+      <div className='letter-sensor-h2'>
+        <h2>Sensor</h2>
+          <h2>Count of Categories:</h2>
+          <ul>
+            <li>Bajo: {categories.bajo}</li>
+            <li>Medio: {categories.medio}</li>
+            <li>Alto: {categories.alto}</li>
+          </ul>
+        <h2>Data Range:</h2>
+        <p>{dataRange} data points</p>
+      </div>
     </div>
   );
 };

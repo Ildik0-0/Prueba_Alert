@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import './PlatformDetails.css'
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from 'react';
@@ -34,30 +34,35 @@ const PlatformsDetails = () => {
 
     
     return(
-        <div className='details'>
-           <div>
-           <h1>Platforms Details</h1>
-            <h2 className='detailH2'>{details.data.name}</h2>
-            <h2 className='detailH2'>{details.data.img}</h2>
-            <Link to={details.data.lastReport}>
-                <button className='btn'>
+        <div className='details-platform'>
+           <div className='div-sensor'>
+           <h1 className='plat-h1-details'>Platforms Details</h1>
+            <h2 className='plat-h2-details'>{details.data.name}</h2>
+            {/* <h2 className='detailH2'>{details.data.img}</h2> */}
+           
+              <div className='sensor-grip'>
+                  {
+                      details.data.sensors.map((sensor) => {
+                          return(
+                              
+                              <div className='sensor-map' key={sensor.id}>
+                                <div className='sensor-letter-div'>
+                                  <h2 className='sensor-letter'>{sensor.type}</h2>
+                                </div>
+                                  <NavLink className='platform-details-txt' to={`/api/Records/${sensor.id}`} id={sensor.id}>
+                                      <button className='sensor-btn'>{sensor.name}</button>
+                                  </NavLink>
+                                  
+                              </div>
+                          )
+                      })
+                  }
+              </div>
+              <Link to={details.data.lastReport}>
+                <button className='btn-report'>
                  Last Report
                 </button>
             </Link>
-            {
-                details.data.sensors.map((sensor) => {
-                    return(
-                        
-                        <div key={sensor.id}>
-                            <Link to={`/api/Records/${sensor.id}`} id={sensor.id}>
-                                <h2 className='detailH2'>{sensor.name}</h2>
-                            </Link>
-                            <h2>{sensor.type}</h2>
-                        </div>
-                    )
-                })
-            }
-
            </div>
         </div>
     )

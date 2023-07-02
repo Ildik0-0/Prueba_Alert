@@ -2,21 +2,24 @@ import Nav from '../navBar/Nav';
 import './Navigation.css'
 import {TbDashboard} from 'react-icons/tb'
 import {GiPlatform} from 'react-icons/gi'
-import {TbRecordMail} from 'react-icons/tb'
 import {FiChevronsLeft} from 'react-icons/fi'
 import {MdOutlineDarkMode} from 'react-icons/md'
 import userimg from './img/user.png'
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { ThemeContext } from '../ThemeContext';
 import { HiOutlineLogout } from 'react-icons/hi';
 
-const Navigation =() =>{
+const Navigation =({setAccess}) =>{
     const [navBar, setNavBar] = useState(false)
     const {darkmode, setDarkMode} = useContext(ThemeContext)
  
     function changeTheme(){
         setDarkMode(!darkmode)
+    }
+    const handleLogOut = () => {
+        setAccess(false);
+       // navigate('/')
     }
 
     return(
@@ -32,15 +35,21 @@ const Navigation =() =>{
             </div>
                 <span>Iremar_Rivas</span>
            </header>
-           <Link to='/dashboard'>
+
+           <NavLink className='decoration-text' to='/dashboard'>
             <Nav title='Dashboard' Icon={TbDashboard}/>
-           </Link>
-           <Link to='/api/Platform'>
+           </NavLink>
+
+           <NavLink className='decoration-text' to='/api/Platform'>
             <Nav title='Platform' Icon={GiPlatform}/>
-           </Link>
+           </NavLink>
+
            <div className="divider"></div>
-           
-           <Nav title='Log Out' Icon={HiOutlineLogout} />
+
+           <NavLink className='decoration-text' onClick={handleLogOut}>
+            <Nav title='Log Out' Icon={HiOutlineLogout} />
+           </NavLink>
+
            <Nav title={`${darkmode ? 'Light Mode' : 'Dark Mode'}`}Icon={MdOutlineDarkMode} onClick={changeTheme} />
            
            <svg
@@ -60,7 +69,7 @@ const Navigation =() =>{
                     />
                     <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
             </svg>
-          
+            
         </div>
     )
 }

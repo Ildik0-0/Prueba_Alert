@@ -12,41 +12,41 @@ import { useDispatch } from 'react-redux';
 import { ThemeContext } from './components/ThemeContext';
 import PlatformsDetails from './components/platformDetail/PlatformDetails';
 import SensorDetails from './components/sensorDetails/sensorDetails';
-import Header from './components/header/Header';
+//import Header from './components/header/Header';
 import Loging from './components/logingForm/Loging';
 
 
-const email= 'iremar.rivas@gmail.com';
-const password= '123asd'
- 
+
 function App() {
+  
+  const URL = 'http://localhost:3001/api/Platforms';
+  const url = 'http://localhost:3001/login';
 
   const location = useLocation()
-//   const [access, setAccess] = useState(false)
-//   const navigate = useNavigate()
-  
-//   async function login(userData) {
+  const [access, setAccess] = useState(false)
+  const navigate = useNavigate()
+  // `?email=${email}&password=${password}`
+  async function login(userData) {
 
-//     try {
-//        const { email, password } = userData;
-//        const {data} = await  axios(URL + `?email=${email}&password=${password}`)
-//        const { access } = data;
-//        setAccess(access);
-//        access && navigate('/api/Platform');
+    try {
+       const { email, password } = userData;
+       const {data} = await  axios(url + `?email=${email}&password=${password}`)
+       const { access } = data;
+       setAccess(access);
+       access && navigate('/dashboard');
     
-//     } catch (error) {
-//        console.log(error.message);
-//     }
+    } catch (error) {
+       console.log(error.message);
+    }
 
     
-//  }
+ }
 
-//  useEffect(() => {
-//     !access && navigate('/')
-//  }, [access])
+ useEffect(() => {
+    !access && navigate('/')
+ }, [access])
 
  
-    const URL = 'http://localhost:3001/api/Platforms';
    
    
     const dispatch = useDispatch();
@@ -72,12 +72,12 @@ function App() {
     <ThemeContext.Provider value={{darkmode, setDarkMode}} >
       <div className='App'>
        
-        {/* onSearch={onSearch}  setAccess={setAccess} */}
+        {/* onSearch={onSearch}   */}
         {
-            location.pathname !== '/' &&  <Navigation/>
+            location.pathname !== '/' &&  <Navigation setAccess={setAccess}/>
          }
         <Routes>
-          <Route path='/' element={<Loging/> } />
+          <Route path='/' element={<Loging login={login}/> } />
           <Route path='/dashboard' element={<Dashboard/>}></Route>
           <Route path='/api/Platform' element={<Platfoms/>}></Route>
           <Route path="/api/Platforms/:id" element={<PlatformsDetails />} />

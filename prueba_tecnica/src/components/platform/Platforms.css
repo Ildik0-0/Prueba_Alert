@@ -27,7 +27,7 @@
 } */
 
 .container{
-
+    
     background-color: rgba(215, 218, 221, 0);
     height: 80vh;
     width: 80vw;
@@ -45,3 +45,25 @@
     font-size: 3rem;
     color: blueviolet;
 }
+
+.pagination-platform{
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination-platform button {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+
+  }
+  
+  .pagination-platform button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
