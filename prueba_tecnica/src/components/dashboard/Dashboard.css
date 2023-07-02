@@ -1,0 +1,14 @@
+.main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: aliceblue;
+    min-height: 100vh;
+    --dm-bg:#111;
+}
+
+.main.dark{
+    background-color: var(--dm-bg);
+    color: white;
+}
