@@ -33,7 +33,8 @@ const SensorDetails = () => {
             dataRange: data.cantidadDatosEnRango
           });
 
-          return (resultResponse.data);
+          //return (resultResponse.data);
+          console.log(resultResponse.data);
         } else {
           console.error('Error fetching sensor data:', data.error);
         }
@@ -53,16 +54,19 @@ const SensorDetails = () => {
 
   return (
     <div className='detail-sensor-dev'>
-      <div className='letter-sensor-h2'>
-        <h2>Sensor</h2>
-          <h2>Count of Categories:</h2>
-          <ul>
-            <li>Bajo: {categories.bajo}</li>
-            <li>Medio: {categories.medio}</li>
-            <li>Alto: {categories.alto}</li>
-          </ul>
-        <h2>Data Range:</h2>
-        <p>{dataRange} data points</p>
+      <div className='detail-sensor-dev-move'>
+          
+            <h2  className='letter-sensor'>Sensor</h2>
+          
+            <h2  className='letter-sensor-categories'>Count of Categories:</h2>
+            
+             <h2 className='letter-sensor-h2'>Bajo: {categories.bajo}</h2>
+             <h2 className='letter-sensor-h2'>Medio: {categories.medio}</h2>
+             <h2 className='letter-sensor-h2'> Alto: {categories.alto}</h2>
+            
+          <h2  className='letter-sensor-h2'>Data Range: {dataRange}</h2>
+          
+        
       </div>
     </div>
   );

@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-//Importacion Axios
+
 import axios from 'axios';
 import Navigation from './components/Navigation/Navigation';
 import './App.css';
 import Dashboard from './components/dashboard/Dashboard';
 import Platfoms from './components/platform/Platforms';
 
-import { allPlatfoms} from './redux/reducer'; // Importa correctamente la acción allPlatfoms
+import { allPlatfoms} from './redux/reducer'; 
 import { useDispatch } from 'react-redux';
 import { ThemeContext } from './components/ThemeContext';
 import PlatformsDetails from './components/platformDetail/PlatformDetails';
-import SensorDetails from './components/sensorDetails/sensorDetails';
-//import Header from './components/header/Header';
+import SensorDetails from './components/sensorDetails/SensorDetails';
+
 import Loging from './components/logingForm/Loging';
 
 
@@ -21,11 +21,12 @@ function App() {
   
   const URL = 'http://localhost:3001/api/Platforms';
   const url = 'http://localhost:3001/login';
-
+  
+  const dispatch = useDispatch();
   const location = useLocation()
-  const [access, setAccess] = useState(false)
   const navigate = useNavigate()
-  // `?email=${email}&password=${password}`
+  const [access, setAccess] = useState(false)
+
   async function login(userData) {
 
     try {
@@ -49,7 +50,6 @@ function App() {
  
    
    
-    const dispatch = useDispatch();
     
   
     useEffect(() => {
@@ -71,8 +71,6 @@ function App() {
   
     <ThemeContext.Provider value={{darkmode, setDarkMode}} >
       <div className='App'>
-       
-        {/* onSearch={onSearch}   */}
         {
             location.pathname !== '/' &&  <Navigation setAccess={setAccess}/>
          }

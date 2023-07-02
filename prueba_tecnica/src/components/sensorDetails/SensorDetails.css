@@ -1,11 +1,32 @@
 .detail-sensor-dev{
-    margin: 10px;
+    
+    margin-top: 60px;
+    margin-left: 550px;
     width: 300px;
-    height: 200px;
-    border: 1px solid white;
+    height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    display: flex;
+    background: linear-gradient(40deg, rgb(64, 54, 244), rgb(162, 127, 38));
+    align-items: center;
+    
 }
 .letter-sensor-h2{
     margin: 10px;
     font-size: 20px;
     color: aliceblue;
+    
+} 
+
+.letter-sensor{
+   
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    color: goldenrod;
+}
+.letter-sensor-categories{
+    font-size: 25px;
+    text-align: center;
+    color: rgb(3, 3, 109);
+    margin: 5px;
 }

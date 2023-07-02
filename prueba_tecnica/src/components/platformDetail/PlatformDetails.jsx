@@ -38,7 +38,7 @@ const PlatformsDetails = () => {
            <div className='div-sensor'>
            <h1 className='plat-h1-details'>Platforms Details</h1>
             <h2 className='plat-h2-details'>{details.data.name}</h2>
-            {/* <h2 className='detailH2'>{details.data.img}</h2> */}
+           
            
               <div className='sensor-grip'>
                   {

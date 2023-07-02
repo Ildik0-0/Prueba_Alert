@@ -6,7 +6,7 @@ import {FiChevronsLeft} from 'react-icons/fi'
 import {MdOutlineDarkMode} from 'react-icons/md'
 import userimg from './img/user.png'
 import { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ThemeContext } from '../ThemeContext';
 import { HiOutlineLogout } from 'react-icons/hi';
 
@@ -19,7 +19,6 @@ const Navigation =({setAccess}) =>{
     }
     const handleLogOut = () => {
         setAccess(false);
-       // navigate('/')
     }
 
     return(

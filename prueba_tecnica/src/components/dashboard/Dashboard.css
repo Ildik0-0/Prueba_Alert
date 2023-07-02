@@ -2,13 +2,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px;
     flex: 1;
     background-color: #111;
    
     --dm-bg:#111;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 15px;
+   
     margin-top: 25px;
 }
 
@@ -38,4 +38,5 @@
 .main-show .header-main{
     height: 150px;
     width: 500px;
+    
 }

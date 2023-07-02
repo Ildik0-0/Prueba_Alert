@@ -17,6 +17,13 @@ const Dashboard = () =>{
             <div className='main-show'>
                 <div className='header-main'>Platform</div>
             </div>
+            <div className='main-show'>
+                <div className='header-main'>Platform</div>
+            </div>
+            <div className='main-show'>
+                <div className='header-main'>Platform</div>
+            </div>
+            
 
        
         </div>
