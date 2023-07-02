@@ -2,6 +2,9 @@ import { useContext } from 'react';
 import './Dashboard.css'
 import { ThemeContext } from '../ThemeContext';
 import Header from '../header/Header';
+import Platforms from '../platform/Platforms';
+import PlatformsDetails from '../platformDetail/PlatformDetails';
+
 
 
 const Dashboard = () =>{
@@ -10,8 +13,9 @@ const Dashboard = () =>{
 
     return(
         <div className={`main ${darkmode && 'dark'}`}>
-           <Header/>
-         
+   
+        <Platforms/>
+       
         </div>
     )
 }

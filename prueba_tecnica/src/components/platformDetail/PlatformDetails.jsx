@@ -34,13 +34,14 @@ const PlatformsDetails = () => {
 
     
     return(
-        <div>
-            <h1>Detalles de Plataformas</h1>
-            <h2>{details.data.name}</h2>
-            <h2>{details.data.img}</h2>
+        <div className='detailsP'>
+           <div>
+           <h1>Platforms Details</h1>
+            <h2 className='detailH2'>{details.data.name}</h2>
+            <h2 className='detailH2'>{details.data.img}</h2>
             <Link to={details.data.lastReport}>
-                <button>
-                lastReport
+                <button className='btn'>
+                 Last Report
                 </button>
             </Link>
             {
@@ -49,7 +50,7 @@ const PlatformsDetails = () => {
                         
                         <div key={sensor.id}>
                             <Link to={`/api/Records/${sensor.id}`} id={sensor.id}>
-                                <h2>{sensor.name}</h2>
+                                <h2 className='detailH2'>{sensor.name}</h2>
                             </Link>
                             <h2>{sensor.type}</h2>
                         </div>
@@ -57,6 +58,7 @@ const PlatformsDetails = () => {
                 })
             }
 
+           </div>
         </div>
     )
 }

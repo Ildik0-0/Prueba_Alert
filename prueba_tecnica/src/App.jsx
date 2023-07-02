@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import { ThemeContext } from './components/ThemeContext';
 import PlatformsDetails from './components/platformDetail/PlatformDetails';
 import SensorDetails from './components/sensorDetails/sensorDetails';
+import Header from './components/header/Header';
  
 function App() {
   
@@ -43,10 +44,10 @@ function App() {
     <ThemeContext.Provider value={{darkmode, setDarkMode}} >
       <div className='App'>
         <Navigation/>
-        <Dashboard/>
+       <Platfoms/>
         <Routes>
           
-          <Route path='/api/Platform' element={<Platfoms/>}></Route>
+          {/* <Route path='/api/Platform' element={<Platfoms/>}></Route> */}
           <Route path="/api/Platforms/:id" element={<PlatformsDetails />} />
           <Route path="/api/Records/:sensorId" element={<SensorDetails />} />
         </Routes>

@@ -9,6 +9,7 @@ import userimg from './img/user.png'
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../ThemeContext';
+import { HiOutlineLogout } from 'react-icons/hi';
 
 const Navigation =() =>{
     const [navBar, setNavBar] = useState(false)
@@ -35,12 +36,8 @@ const Navigation =() =>{
             <Nav title='Dashboard' Icon={TbDashboard}/>
            </Link>
            <div className="divider"></div>
-           <Link to='/api/Platform'>
-            <Nav title='Platfoms' Icon={GiPlatform}/>
-           </Link>
-           <Link to='/api/Records'>
-            <Nav title='Records' Icon={TbRecordMail}/>
-           </Link>
+           
+           <Nav title='Log Out' Icon={HiOutlineLogout} />
            <Nav title={`${darkmode ? 'Light Mode' : 'Dark Mode'}`}Icon={MdOutlineDarkMode} onClick={changeTheme} />
            
            <svg
