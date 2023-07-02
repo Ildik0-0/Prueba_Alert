@@ -24,16 +24,16 @@ const SensorDetails = () => {
         const data = response.data;
 
         if (response.status === 200) {
-          setCategories(data.registros);
-          setDataRange(data.cantidadDatosEnRango);
+          setCategories(data.records);
+          setDataRange(data.volumeRangeData);
 
          
           const resultResponse = await axios.post(url, {
-            categories: data.registros,
-            dataRange: data.cantidadDatosEnRango
+            categories: data.records,
+            dataRange: data.volumeRangeData
           });
 
-          //return (resultResponse.data);
+          
           console.log(resultResponse.data);
         } else {
           console.error('Error fetching sensor data:', data.error);
