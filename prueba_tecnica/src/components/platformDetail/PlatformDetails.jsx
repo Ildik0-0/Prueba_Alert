@@ -34,7 +34,7 @@ const PlatformsDetails = () => {
 
     
     return(
-        <div className='detailsP'>
+        <div className='details'>
            <div>
            <h1>Platforms Details</h1>
             <h2 className='detailH2'>{details.data.name}</h2>

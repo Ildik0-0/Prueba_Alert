@@ -9,12 +9,12 @@ import PlatformsDetails from '../platformDetail/PlatformDetails';
 
 const Dashboard = () =>{
 
-    const {darkmode} = useContext(ThemeContext)
+    const {darkMode} = useContext(ThemeContext)
 
     return(
-        <div className={`main ${darkmode && 'dark'}`}>
+        <div className='main'>
    
-        <Platforms/>
+            <h1>Hola</h1>
        
         </div>
     )

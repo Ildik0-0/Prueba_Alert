@@ -32,8 +32,11 @@ const Navigation =() =>{
             </div>
                 <span>Iremar_Rivas</span>
            </header>
-           <Link to='/'>
+           <Link to='/dashboard'>
             <Nav title='Dashboard' Icon={TbDashboard}/>
+           </Link>
+           <Link to='/api/Platform'>
+            <Nav title='Platform' Icon={GiPlatform}/>
            </Link>
            <div className="divider"></div>
            

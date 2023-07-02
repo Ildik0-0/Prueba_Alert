@@ -24,10 +24,24 @@
 
 .platform .row.header{
     height: 100px;
+} */
+
+.container{
+
+    background-color: rgba(215, 218, 221, 0);
+    height: 80vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 15px;
+    position: relative;
+    padding: 20px;
+    z-index: 0;
+    overflow-y: scroll;
 }
 
-img{
-    width: 24vh;
-    height: 24vh;
-    position: relative;
-} */
+
+.title{
+    font-size: 3rem;
+    color: blueviolet;
+}
