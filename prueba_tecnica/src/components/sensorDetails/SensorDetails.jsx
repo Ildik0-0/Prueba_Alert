@@ -17,6 +17,7 @@ const SensorDetails = () => {
   });
   const [dataRange, setDataRange] = useState(0);
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {

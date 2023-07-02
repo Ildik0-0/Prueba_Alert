@@ -2,6 +2,7 @@ import { Link, NavLink, useParams } from 'react-router-dom';
 import './PlatformDetails.css'
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from 'react';
+
 import { getApiPlatfomsId } from '../../redux/reducer';
 import axios from 'axios';
 
@@ -13,6 +14,7 @@ const PlatformsDetails = () => {
     const dispatch = useDispatch();
     const details = useSelector((state) => state.apiInfo.platforms);
     
+  
       
     useEffect(() => {
       const getApiPlatfom = async () => {

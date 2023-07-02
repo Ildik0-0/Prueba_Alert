@@ -1,4 +1,5 @@
 import {  useSelector } from 'react-redux';
+
 import './Platforms.css'
 
 import Cards from '../cards/Cards';
@@ -14,6 +15,8 @@ const Platforms = () => {
   const lastShowItem = page * itemsShow;
   const firstShowItem = lastShowItem - itemsShow;
   const itemsShowPage = apiInfo.data.slice(firstShowItem, lastShowItem);
+
+ 
 
   const handlePageChange = (numberPage) => {
     setPage(numberPage);
